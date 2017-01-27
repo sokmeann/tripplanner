@@ -1,5 +1,38 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h2>Index Page</h2>
+<nav>
+ <h2>Index Page</h2>
+</nav>
+
+<div class="panel-right">
+ <div class="options">
+   <div class="hotel options">
+     <h4>Hotels</h4>
+     <select>
+       {% for hotel in hotels %}
+       <option value="{{hotel.name}}">{{hotel.name}}</option>
+       {% endfor %}
+     </select>
+   </div>
+   <div class="restaurant options">
+     <h4>Restaurants</h4>
+     <select>
+       {% for restaurant in restaurants %}
+       <option value="{{restaurant.name}}">{{restaurant.name}}</option>
+       {% endfor %}
+     </select>
+   </div>
+   <div class="activity options">
+     <h4>Activities</h4>
+     <select>
+       {% for activity in activities %}
+       <option value="{{activity.name}}">{{activity.name}}</option>
+       {% endfor %}
+     </select>
+   </div>
+ </div>
+
+ <div class="itinerary"></div>
+</div>
 {% endblock %}
