@@ -46,10 +46,9 @@ app.use(function (req, res, next) {
 });
 
 app.use(function (err, req, res, next) {
-  // do whatever you want with the error
-  console.log('OOOOHHHH NOOOOOOO!', err.message);
-  // keep this if you still want Express to ultimately handle the error for you
-  next(err);
+  res.status(err.status || 500);
+  console.error(err);
+  res.render('error');
 });
 
 // start
