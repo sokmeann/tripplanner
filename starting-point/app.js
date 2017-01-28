@@ -10,6 +10,8 @@ const express = require('express');
 const volleyball = require('volleyball');
 const bodyParser = require('body-parser');
 const nunjucks = require('nunjucks');
+const $ = require('jquery');
+const bootstrap = require('bootstrap');
 
 // our modules
 
@@ -34,8 +36,10 @@ app.use(bodyParser.json());
 
 // routing
 
-app.use(routes);
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/bootstrap', express.static('node_modules/bootstrap/dist'));
+app.use('/jquery', express.static('node_modules/jquery/dist'));
+app.use(routes);
 
 // 404 catching, and maybe some custom error handling?
 
