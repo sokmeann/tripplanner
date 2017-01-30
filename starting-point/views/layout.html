@@ -1,14 +1,17 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>Welcome to Trip Planner!</title>
-<!--     <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-     <!-- Stylesheets go here! -->
-    <link rel="stylesheet" href="/stylesheets/style.css"></link>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/jquery/jquery.js"></script>
+    <!-- Stylesheets go here! -->
+    <link rel="stylesheet" href="/style.css"></link>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"></link>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTIeIAuEVvL7V5W5YdpAvRNvaH1iWJO88"></script>
+    <script src="/scripts/gmaps.js"></script>
 
   </head>
   <body>
-    <h1>Trip Planner</h1>
     {% block content %}{% endblock %}
   </body>
 </html>

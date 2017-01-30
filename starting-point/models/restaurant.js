@@ -1,7 +1,7 @@
-const db = require('./db');
 const Sequelize = require('sequelize');
+const db = require('./db');
 
-const restaurant = db.define('restaurant', {
+const Restaurant = db.define('restaurant', {
   name: {
     type: Sequelize.STRING,
     allowNull: false
@@ -12,8 +12,12 @@ const restaurant = db.define('restaurant', {
   },
   price: {
     type: Sequelize.INTEGER,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      min: 1,
+      max: 5
+    }
   }
 });
 
-module.exports = restaurant;
+module.exports = Restaurant;

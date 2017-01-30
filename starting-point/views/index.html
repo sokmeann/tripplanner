@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- <nav>
+ <h2>Index Page</h2>
+</nav> -->
+<div id="mainframe" class="primary">
+  <div class="text-vertical-center">
+      <h1>Welcome to TripMaker</h1>
+      <h3>Your Pocket Itinerary</h3>
+      <br>
+    <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
+  </div>
+</div>
+
+<div id="howto" class="transparent">
+  <p>How to Use TripMaker</p>
+</div>
+
+<div id="map" class="container">
+  <div class="row">
+    <div id="map">
+    </div>
+  </div>
+</div>
+
+
+    <div id="panel-right" class="container">
+     <div class="row">
+       <div id="hotel-options" class="col-lg-3">
+         <h4>Hotels</h4>
+         <select>
+           {% for hotel in hotels %}
+           <option value="{{hotel.name}}" width="150px">{{hotel.name}}</option>
+           {% endfor %}
+         </select>
+       </div>
+       <div id="restaurant-options" class="col-lg-3">
+         <h4>Restaurants</h4>
+         <select>
+           {% for restaurant in restaurants %}
+           <option value="{{restaurant.name}}" width="150px">{{restaurant.name}}</option>
+           {% endfor %}
+         </select>
+       </div>
+       <div id="activity-options" class="col-lg-3">
+         <h4>Activities</h4>
+         <select>
+           {% for activity in activities %}
+           <option value="{{activity.name}}" width="150px">{{activity.name}}</option>
+           {% endfor %}
+         </select>
+       </div>
+     </div>
+
+{% endblock %}

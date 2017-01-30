@@ -4,17 +4,19 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app"
+    "start:production": "node app",
+    "build:css": "node-sass -w -r assets/stylesheets -o public",
+    "start:dev": "nodemon -e html,css,js app.js",
+    "start": "npm run start:dev"
   },
   "keywords": [],
   "author": "Gabriel Lebec <glebec@gmail.com> (https://github.com/glebec)",
   "license": "MIT",
   "dependencies": {
+    "bluebird": "^3.4.7",
     "body-parser": "^1.16.0",
     "bootstrap": "^3.3.7",
     "express": "^4.14.0",
-    "jQuery": "^1.7.4",
     "jquery": "^3.1.1",
     "nunjucks": "^3.0.0",
     "pg": "^6.1.2",
@@ -23,6 +25,7 @@
     "volleyball": "^1.4.1"
   },
   "devDependencies": {
+    "node-sass": "^4.4.0",
     "nodemon": "^1.11.0"
   }
 }

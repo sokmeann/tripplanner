@@ -1,12 +1,11 @@
 'use strict';
-
+//const Sequelize = require('sequelize');
 const db = require('./db');
 
 // require all the models
-
-const Activity = require('./activity');
-const Hotel = require('./hotel');
 const Place = require('./place');
+const Hotel = require('./hotel');
+const Activity = require('./activity');
 const Restaurant = require('./restaurant');
 
 Hotel.belongsTo(Place);

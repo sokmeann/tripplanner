@@ -1,14 +1,14 @@
-const db = require('./db');
 const Sequelize = require('sequelize');
+const db = require('./db');
 
-const place = db.define('place', {
+const Place = db.define('place', {
   address: {
     type: Sequelize.STRING,
     allowNull: false
   },
   city: {
     type: Sequelize.STRING,
-    allowNull: false
+    alloNull: false
   },
   state: {
     type: Sequelize.STRING,
@@ -24,4 +24,4 @@ const place = db.define('place', {
   }
 });
 
-module.exports = place;
+module.exports = Place;

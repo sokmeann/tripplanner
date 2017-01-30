@@ -10,8 +10,6 @@ const express = require('express');
 const volleyball = require('volleyball');
 const bodyParser = require('body-parser');
 const nunjucks = require('nunjucks');
-const $ = require('jquery');
-const bootstrap = require('bootstrap');
 
 // our modules
 
@@ -50,9 +48,10 @@ app.use(function (req, res, next) {
 });
 
 app.use(function (err, req, res, next) {
-  res.status(err.status || 500);
-  console.error(err);
-  res.render('error');
+  // do whatever you want with the error
+  console.log('ERROR!', err.message);
+  // keep this if you still want Express to ultimately handle the error for you
+  next(err);
 });
 
 // start
