@@ -1,20 +1,24 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<!-- <nav>
- <h2>Index Page</h2>
-</nav> -->
-<div id="mainframe" class="primary">
-  <div class="text-vertical-center">
-      <h1>Welcome to TripMaker</h1>
-      <h3>Your Pocket Itinerary</h3>
-      <br>
-    <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
+<nav id="navbar" class="navbar navbar-fixed-top navbar-default">
+  <a class="navbar-brand" href="#">
+   <h2><span id="grain" class="glyphicon glyphicon-grain"></span>  TripMaker</h2>
+  </a>
+  <div class="navbar-collapse collapse">
+   <ul class="navbar-nav">
+    <li class="nav-item active">HOME</li>
+    <li class="nav-item">ABOUT</li>
+    <li class="nav-item">HOW IT WORKS</li>
+    <li class="nav-item">FAQS</li>
+   </ul>
   </div>
-</div>
+</nav>
 
-<div id="howto" class="transparent">
-  <p>How to Use TripMaker</p>
+
+<div id="mainframe" class="primary">
+      <h1>Welcome to TripMaker</h1>
+      <h4>NYC's #1 Pocket Itinerary App</h4>
 </div>
 
 <div id="map" class="container">
@@ -25,31 +29,55 @@
 </div>
 
 
-    <div id="panel-right" class="container">
+    <div id="panel-right">
      <div class="row">
-       <div id="hotel-options" class="col-lg-3">
-         <h4>Hotels</h4>
+       <div id="hotel-options">
+         <h3>Hotels</h3>
          <select>
            {% for hotel in hotels %}
-           <option value="{{hotel.name}}" width="150px">{{hotel.name}}</option>
+           <option class="options" value="{{hotel.name}}" width="150px">{{hotel.name}}</option>
            {% endfor %}
          </select>
        </div>
-       <div id="restaurant-options" class="col-lg-3">
-         <h4>Restaurants</h4>
+       <div id="restaurant-options">
+         <h3>Restaurants</h3>
          <select>
            {% for restaurant in restaurants %}
-           <option value="{{restaurant.name}}" width="150px">{{restaurant.name}}</option>
+           <option class="options" value="{{restaurant.name}}" width="150px">{{restaurant.name}}</option>
            {% endfor %}
          </select>
        </div>
-       <div id="activity-options" class="col-lg-3">
-         <h4>Activities</h4>
+       <div id="activity-options">
+         <h3>Activities</h3>
          <select>
            {% for activity in activities %}
-           <option value="{{activity.name}}" width="150px">{{activity.name}}</option>
+           <option class="options" value="{{activity.name}}" width="150px">{{activity.name}}</option>
            {% endfor %}
          </select>
+
+          <div class="itinerary">
+            <h3>Day 2</h3>
+            <div class="MyHotel">
+              <p>My Hotel</p>
+              <div class="item"><p>Some Hotel</p></div>
+              <br>
+<!--               <span class="glyphicon glyphicon-remove-circle"></span> -->
+            </div>
+            <div class="MyRestaurants">
+              <p>My Restaurants</p>
+              <div class="item"><p>Some Restaurants</p></div>
+              <br>
+<!--               <span class="glyphicon glyphicon-remove-circle"></span> -->
+            </div>
+            <div class="MyActivities">
+              <p>My Activities</p>
+              <div class="item"><p>Some Activities</p></div>
+              <br>
+<!--               <span class="glyphicon glyphicon-remove-circle"></span> -->
+            </div>
+            </div>
+          </div>
+        </div>
        </div>
      </div>
 
